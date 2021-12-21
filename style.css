@@ -9,6 +9,8 @@
     /* Size */
     --padding: 12px;
     --avatar-size: 36px;
+    --next-video-width: 168px;
+    --next-video-height: 94px;
     /* Font Size */
     --font-large: 18px;
     --font-medium: 14px;
@@ -73,7 +75,11 @@ header .icons .fa-search {
 }
 
 /* Video Info */
-.info {
+body > .info {
+    padding: var(--padding);
+}
+
+.info .metadata {
     padding: var(--padding);
 }
 
@@ -133,6 +139,7 @@ header .icons .fa-search {
 
 /* Channle Description */
 .channel {
+    padding: calc(var(--padding) / 2);
     display: flex;
     justify-content: space-between;
     border-top: 1px solid var(--grey-light-color);
@@ -157,10 +164,12 @@ header .icons .fa-search {
 
 .channel .metadata .info .name {
     font-size: var(--font-medium);
+    padding-left: var(--padding);
 }
 
-.channel .metadata .info .subscribers {
-    font-size: var(--font-small);
+.subscirbersa {
+    padding-left: var(--padding);
+    font-size: var(--font-micro);
     color: var(--grey-dark-color);
 }
 
@@ -168,4 +177,68 @@ header .icons .fa-search {
     text-transform: uppercase;
     color: var(--red-color);
     font-size: var(--font-medium);
+}
+
+/* Up Next */
+.upNext {
+    padding: var(--padding);
+}
+
+.upNext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--padding) / 2); 
+}
+
+.upNext .item {
+    display: flex;
+    margin-top: var(--padding);
+
+}
+
+.upNext .item .img {
+    flex: 1 1 35%;
+    margin-right: var(--padding);
+}
+
+.upNext .item .img img {
+    width: 100%;
+}
+
+.upNext .item .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn {
+    flex: 1 1 5%;
+}
+
+.upNext .item .info .title {
+    font-size: var(--font-large);
+}
+.upNext .item .info .name {
+    font-size: var(--font-medium);
+}
+
+.upNext .item .info .views {
+    font-size: var(--font-small);
+}
+
+.infoAndUpnext {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .infoAndUpnext {
+        flex-direction: row;
+    }
+    .infoAndUpnext > .info {
+        flex: 1 1 50%;
+    }
+    .infoAndUpnext .upNext {
+        flex: 1 1 50%;
+    }
 }
