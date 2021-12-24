@@ -32,6 +32,11 @@ ul, li {
     list-style: none;
 }
 
+a, a:visited {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
 button, button:focus {
     border: none;
     cursor: pointer;
