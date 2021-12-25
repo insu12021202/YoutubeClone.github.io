@@ -79,6 +79,8 @@ button, button:focus {
   }
 
 .pu_head {
+    display: flex;
+    align-items: center;
     padding-bottom: var(--padding);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
