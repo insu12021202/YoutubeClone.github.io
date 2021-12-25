@@ -44,6 +44,46 @@ button, button:focus {
     background-color: transparent;
 }
 
+/* Pop Up Window */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+
+    /* 숨기기 */
+    z-index: -1;
+    opacity: 0;
+}
+
+.window {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+    
+    /* 임시 지정 */
+    width: 500px;
+    height: 500px;
+  }
+
+  .show {
+      opacity: 1;
+      z-index: 1000;
+      transition: all .5s;
+  }
+
 /* Header */
 header {
     display: flex;
@@ -126,6 +166,10 @@ body > .info {
     margin: var(--padding) 0;
 }
 
+.actionClicked {
+    color: var(--blue-color);
+}
+
 .action button {
     display: flex;
     flex-direction: column;
@@ -139,9 +183,7 @@ body > .info {
     font-size: 16px;
 }
 
-.action button i:active {
-    color: var(--blue-color);
-}
+
 
 /* Channle Description */
 .channel {
@@ -180,9 +222,9 @@ body > .info {
 }
 
 .channel .subscribe {
-    text-transform: uppercase;
     color: var(--red-color);
     font-size: var(--font-medium);
+    margin-right: 20px;
 }
 
 /* Up Next */
